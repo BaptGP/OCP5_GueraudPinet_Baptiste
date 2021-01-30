@@ -50,7 +50,10 @@ table {
 body{
     font-family: "Alegreya";
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .logo{
     width: 200px;
     margin-left: 20px;
@@ -80,8 +83,44 @@ header{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 0;
 }
+
+.article{
+    display: flex;
+    background-color: #cbc0e0;
+    margin: 50px auto;
+    width: 70%;
+    height: 150px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.article :nth-child(1) { order: 2; }
+.article :nth-child(2) { order: 1; }
+.article :nth-child(3) { order: 3; }
+.article :nth-child(4) { order: 4; }
+
+.button{
+    height: 70px;
+    margin-right: 50px;
+    border-radius: 15px;
+    width: 150px;
+    background-color: #d68333;
+    opacity: 0.8;
+    box-shadow: 0 5px 5px gray;
+    border: none;
+    font-family: 'Alegreya';
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.article__image{
+    width: 199px;
+    display: flex;
+    height: 150px;
+    object-fit: cover;
+}
 footer{
-    position: fixed;
     bottom: 0;
     width: 100%;
     height: 100px;
