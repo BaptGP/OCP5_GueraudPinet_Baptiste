@@ -120,6 +120,58 @@ header{
     height: 150px;
     object-fit: cover;
 }
+
+.produit{
+    background-color: #cbc0e0;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 900px;
+    padding: 10px;
+}
+.produit__image{
+    width: 900px;
+}
+.produit__name{
+    font-size: 40px;
+    text-align: center;
+    margin: 30px auto;
+}
+.produit__description{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.produit__price{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+}
+.produit__command{
+    height: 70px;
+    margin: 30px auto;
+    border-radius: 15px;
+    width: 150px;
+    background-color: #d68333;
+    opacity: 0.8;
+    box-shadow: 0 5px 5px gray;
+    border: none;
+    font-family: 'Alegreya';
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    text-align: center;
+}
+select{
+    width: 200px;
+    margin: 0 auto;
+}
+
+
 footer{
     bottom: 0;
     width: 100%;
@@ -128,6 +180,7 @@ footer{
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: inherit;
 }
 .footer{
     display: flex;
@@ -135,3 +188,5 @@ footer{
     width: 100%;
     padding: 0 20px;
 }
+
+
