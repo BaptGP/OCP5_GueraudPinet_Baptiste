@@ -1,11 +1,10 @@
-var request = new XMLHttpRequest();
+const get = async function() {
+  let response = await fetch('http://localhost:3000/api/cameras');
+  if (response.ok) {
+    let data = await response.json();
+    console.log(data);
 
-request.onreadystatechange = function() {
-  if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-    var response = JSON.parse(this.responseText);
-    console.log(response);
-
-    response.forEach(function(produit){
+    data.forEach(function(produit){
         var article = document.createElement("div");
         article.setAttribute("class", "article");
 
@@ -36,13 +35,30 @@ request.onreadystatechange = function() {
         articles.append(article);
         article.append(lien);
         lien.append(button);
-        }
-    );
-  }else if (this.readyState == 4 && this.status == 404) {
-      alert('Nous ne parvenons pas à trouver le serveur...')
-  }
+        
+    });
+  }else {
+    alert('Nous ne parvenons pas à trouver le serveur...');
+  };
 };
-  
-request.open("GET", "http://localhost:3000/api/cameras");
-request.send();
+
+get();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
