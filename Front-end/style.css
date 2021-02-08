@@ -54,6 +54,9 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
+/*HEADER*/
+
 .logo{
     width: 200px;
     margin-left: 20px;
@@ -69,13 +72,64 @@ header{
 }
 .panier{
     margin-right: 20px;
+    
+}
+.panier__lien{
     display: flex;
     flex-direction: column;
 }
+
 .panier__icone{
     text-align: center;
     margin-bottom: 5px;
 }
+
+
+
+
+/*PANIER*/
+
+.produit_panier{
+    background-color: #cbc0e0;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 900px;
+    padding: 10px;
+}
+
+.vider__panier{
+    height: 70px;
+    margin-right: 50px;
+    border-radius: 15px;
+    width: 150px;
+    background-color: #d68333;
+    opacity: 0.8;
+    box-shadow: 0 5px 5px gray;
+    border: none;
+    font-family: 'Alegreya';
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.commandes{
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+}
+.panier__image{
+    width: 150px;
+}
+
+
+
+
+
+
+
 .fas{
     font-size: 20px;
     background: linear-gradient(to right, #d68333, #8f5bfd);

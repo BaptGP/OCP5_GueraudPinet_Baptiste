@@ -1,9 +1,8 @@
 const queryStringUrlId = window.location.search;
 console.log(queryStringUrlId)
 
-const myID = queryStringUrlId.slice(1);
+const myID = queryStringUrlId.slice(4);
 console.log(myID)
-
 
 const get = async function() {
     let response = await fetch('http://localhost:3000/api/cameras/' + myID);
@@ -54,6 +53,7 @@ const get = async function() {
 
             var command = document.createElement('div');
             command.setAttribute('class', 'produit__command');
+            command.setAttribute('onclick', 'ajouterAuPanier(myID)'); //Déclarer la fonction ajouterAuPanier au click du bouton command
             command.innerHTML = "Commander";
 
         

@@ -27,7 +27,7 @@ const get = async function() {
         var articles = document.getElementById('articles');
 
         var lien = document.createElement("a");
-        lien.setAttribute('href', 'produit.html?' + produit._id);
+        lien.setAttribute('href', 'produit.html?id=' + produit._id);
 
         article.append(titre);
         article.append(articleImage);
