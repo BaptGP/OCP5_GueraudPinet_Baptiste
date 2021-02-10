@@ -58,3 +58,17 @@ function verifPanier () {
 verifPanier();
 
 
+
+function validateEmail() {
+    var mail = document.getElementById('email').value;
+
+    var regxEmail = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+
+    if(regxEmail.test(mail)){
+        return true
+    }else{
+        alert("L'email est incorrect")
+        return false;
+    }
+}
+

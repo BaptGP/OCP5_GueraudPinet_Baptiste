@@ -118,6 +118,9 @@ header{
     align-items: center;
     cursor: pointer;
 }
+.vider__panier:hover{
+    opacity: 1;
+}
 .commandes{
     display: flex;
     flex-direction: row;
@@ -154,6 +157,25 @@ header{
     border: none;
 }
 
+.formulaire button{
+    height: 50px;
+    margin: 20px auto 20px auto;
+    border-radius: 15px;
+    width: 180px;
+    background-color: #d68333;
+    opacity: 0.8;
+    box-shadow: 0 5px 5px gray;
+    border: none;
+    font-family: 'Alegreya';
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.formulaire button:hover{
+    opacity: 1;
+}
 
 
 
@@ -197,6 +219,9 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.button:hover{
+    opacity: 1;
 }
 .article__image{
     width: 199px;
