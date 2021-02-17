@@ -144,7 +144,7 @@ header{
     font-family: "Alegreya";
 }
 
-.formulaire span {
+.formulaire_text {
     text-align: center;
     font-size: 20px;
     margin-bottom: 20px;
@@ -176,8 +176,25 @@ header{
 .formulaire button:hover{
     opacity: 1;
 }
+.panier_vide{
+    margin: auto;
+    font-size: 20px;
+}
+.price_total{
+    text-align: right;
+    font-size: 25px;
+}
 
-
+#erreur{
+    color: red;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.footer_panier{
+    position: fixed;
+    bottom: 0;
+}
 
 
 .fas{

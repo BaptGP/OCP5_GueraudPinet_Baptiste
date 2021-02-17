@@ -25,24 +25,25 @@
             <div class="produit_panier" id="produit_panier">
             
             </div>
-            <div class="formulaire" id="formulaire">
-                <span>Pour valider votre panier, Merci de remplir ce formulaire</span>
+            <form class="formulaire" id="formulaire" method="POST">
+                <span class="formulaire_text">Pour valider votre panier, Merci de remplir ce formulaire</span>
                 <label for="firstname">Votre Prénom</label>
                 <input type="text" name="firstname" id="firstname">
                 <label for="lastname">Votre Nom</label>
                 <input type="text" name="lastname" id="lastname">
-                <label for="adress">Votre Adresse</label>
-                <input type="text" name="adress" id="adress">
+                <label for="address">Votre Adresse</label>
+                <input type="text" name="address" id="address">
                 <label for="city">Votre Ville</label>
                 <input type="text" name="city" id="city">
                 <label for="email">Votre Email</label>
                 <input type="text" name="email" id="email">
-                <button type="submit" onclick="validateEmail()">Procéder au paiement</button>
+                <button type="submit">Procéder au paiement</button>
+                <p id="erreur"></p>
             </div>
         </div>
         
     </main>
-    <footer>
+    <footer class="footer_panier">
         <div class="footer">
             <span>Mentions légales</span>
             <span>Contact</span>

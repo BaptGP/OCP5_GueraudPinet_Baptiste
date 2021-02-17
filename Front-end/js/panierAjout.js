@@ -1,6 +1,7 @@
-function ajouterAuPanier(id)
+function ajouterAuPanier(id, price)
 {
     var panier = localStorage.getItem('panier'); // Récupérer le localstorage
+    var total = localStorage.getItem('total'); // Récupérer le localstorage
 
     if(panier == null)
     {
@@ -11,6 +12,15 @@ function ajouterAuPanier(id)
         panier = JSON.parse(panier); //Convertir JSON en Javascript
         panier.push(id); // Ajout de l'id dans le panier
         localStorage.setItem('panier', JSON.stringify(panier)); 
+    }
+
+    if(total == null)
+    {
+        localStorage.setItem('total', price);
+    }
+    else
+    {
+        localStorage.setItem('total', parseInt(total) + parseInt(price));
     }
 
     alert('Le produit a été ajouté au panier !');
