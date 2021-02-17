@@ -63,7 +63,8 @@ function verifPanier () {
 verifPanier();
 
 document.getElementById('formulaire').addEventListener("submit", function(e){
-    var erreur;
+    e.preventDefault();
+    var erreur = null;
     var prenom = document.getElementById('firstname').value;
     var nom = document.getElementById('lastname').value;
     var adresse = document.getElementById('address').value;
@@ -82,27 +83,33 @@ document.getElementById('formulaire').addEventListener("submit", function(e){
     }
     if (ville.length < 3) {
         erreur = "La ville renseignée est incorrecte"
-    }if(!regxEmail.test(mail)){
+    }
+    if(!regxEmail.test(mail)){
         erreur = "Le mail est incorrect"
-    }if (erreur){
-        e.preventDefault();
-        document.getElementById("erreur").innerHTML = erreur;
-        return false
-    }else{
-        alert("formulaire envoyé")
     }
     
+    if (erreur != null){
+        document.getElementById("erreur").innerHTML = erreur;
+        return false
+    }
+        
+    var contact = {"firstName": prenom, "lastName": nom, "address": adresse, "city": ville, "email": mail};
+    var products = localStorage.getItem('panier');
+    
+    var envoi = { contact,  products}
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:3000/api/cameras/order");
+    xhr.setRequestHeader("Content-type", "application/json")
+    xhr.send(JSON.stringify(envoi));
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 201) {
+            alert("formulaire envoyé")
+            //return true
+        }else {
+        console.error("Une erreur est survenue...");
+        }
+    }
+
+    
 })
-// var envoi = contact: {firstName: prenom, lastName: nom, address: adresse, city: ville, email: mail } products: panier
-// json.stringify(envoi);
-// var xhr = new XMLHttpRequest;
-// xhr.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//         return true
-//     }else if (this.readyState == 4) {
-//         alert("Une erreur est survenue...");
-//     }
-// }
-// xhr.open("POST", "http://localhost:3000/api/cameras/order", true);
-// xhr.responseType = "json";
-// xhr.send();
