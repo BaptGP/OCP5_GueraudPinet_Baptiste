@@ -94,9 +94,9 @@ document.getElementById('formulaire').addEventListener("submit", function(e){
     }
         
     var contact = {"firstName": prenom, "lastName": nom, "address": adresse, "city": ville, "email": mail};
-    var products = localStorage.getItem('panier');
+    var products = JSON.parse(localStorage.getItem('panier'));
     
-    var envoi = { contact,  products}
+    var envoi = { contact: contact,  products: products};
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:3000/api/cameras/order");
@@ -105,7 +105,6 @@ document.getElementById('formulaire').addEventListener("submit", function(e){
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 201) {
             alert("formulaire envoyé")
-            //return true
         }else {
         console.error("Une erreur est survenue...");
         }
