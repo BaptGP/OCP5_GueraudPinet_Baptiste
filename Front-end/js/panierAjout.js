@@ -24,5 +24,4 @@ function ajouterAuPanier(id, price)
     }
 
     alert('Le produit a été ajouté au panier !');
-    console.log(localStorage.getItem('panier'));
 }

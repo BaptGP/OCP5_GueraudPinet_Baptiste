@@ -104,9 +104,10 @@ document.getElementById('formulaire').addEventListener("submit", function(e){
     xhr.send(JSON.stringify(envoi));
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 201) {
+            localStorage.setItem("order", this.responseText)
             alert("formulaire envoyé")
+            window.location = "confirmation.html";
         }else {
-        console.error("Une erreur est survenue...");
         }
     }
 

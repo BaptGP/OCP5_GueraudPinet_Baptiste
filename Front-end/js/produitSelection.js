@@ -1,8 +1,6 @@
 const queryStringUrlId = window.location.search;
-console.log(queryStringUrlId)
 
 const myID = queryStringUrlId.slice(4);
-console.log(myID)
 
 var myPrice;
 
@@ -10,7 +8,6 @@ const get = async function() {
     let response = await fetch('http://localhost:3000/api/cameras/' + myID);
     if (response.ok) {
         let data = await response.json();
-        console.log(data);
     
         var produit = document.createElement('div');
             produit.setAttribute('class', 'produit');
@@ -51,12 +48,10 @@ const get = async function() {
                 var optionListe = document.createElement('option');
                 listeCamera.append(optionListe);
                 optionListe.innerHTML = lenseCamera
-                console.log(lenseCamera)
             }
 
             var command = document.createElement('div');
             command.setAttribute('class', 'produit__command');
-            console.log(myPrice);
             command.setAttribute('onclick', 'ajouterAuPanier(myID, myPrice)'); //Déclarer la fonction ajouterAuPanier au click du bouton command
             command.innerHTML = "Commander";
 

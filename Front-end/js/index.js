@@ -2,7 +2,6 @@ const get = async function() {
   let response = await fetch('http://localhost:3000/api/cameras');
   if (response.ok) {
     let data = await response.json();
-    console.log(data);
 
     data.forEach(function(produit){
         var article = document.createElement("div");
@@ -27,6 +26,7 @@ const get = async function() {
         var articles = document.getElementById('articles');
 
         var lien = document.createElement("a");
+        lien.setAttribute('class', 'lien');
         lien.setAttribute('href', 'produit.html?id=' + produit._id);
 
         article.append(titre);
