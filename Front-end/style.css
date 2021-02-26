@@ -103,6 +103,7 @@ header{
     flex-direction: column;
     justify-content: space-between;
     border-radius: 5px;
+    box-shadow: 5px 8px 10px gray;
     transition: transform 0.5s;
 }
 .article:hover{
@@ -152,7 +153,7 @@ header{
     margin: 30px auto;
     display: flex;
     flex-direction: column;
-    width: 900px;
+    width: 45%;
     padding: 10px;
     border-radius: 5px;
 }
@@ -193,7 +194,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 900px;
+    width: 45%;
     padding: 10px;
     border-radius: 5px;
     font-family: "Alegreya";
@@ -263,9 +264,13 @@ header{
     background-color: green;
     width: 300px;
     height: 80px;
-    margin: auto;
+    margin: 50px auto;
     color: white;
 
+}
+.numero_commande{
+    font-weight: 900;
+    margin: 10px auto;
 }
 
 
@@ -291,11 +296,11 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 900px;
+    width: 80%;
     padding: 10px;
 }
 .produit__image{
-    width: 900px;
+    width: 100%;
 }
 .produit__name{
     font-size: 40px;
@@ -357,3 +362,25 @@ footer{
 }
 
 
+
+@media screen and (max-width: 1000px){
+    .articles{
+        flex-direction: column;
+    }
+    .article{
+        width: 80%;
+        margin: 50px auto;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .produit_panier{
+        width: 80%;
+    }
+    .formulaire{
+        width: 80%;
+    }
+    .footer_panier{
+        position: inherit;
+    }
+}
