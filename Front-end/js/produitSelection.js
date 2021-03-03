@@ -1,7 +1,9 @@
 const queryStringUrlId = window.location.search;
 
 const myID = queryStringUrlId.slice(4);
-
+if(queryStringUrlId.length <= 4){
+  window.location = "index.html";
+}
 var myPrice;
 
 const get = async function() {
