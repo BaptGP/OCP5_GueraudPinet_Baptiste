@@ -98,18 +98,39 @@ document.getElementById('formulaire').addEventListener("submit", function(e){
     
     var envoi = { contact: contact,  products: products};
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/api/cameras/order");
-    xhr.setRequestHeader("Content-type", "application/json")
-    xhr.send(JSON.stringify(envoi));
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 201) {
+    const envoiFetch = async function() {
+        let responseEnvoiFetch = await fetch('http://localhost:3000/api/cameras/order', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(envoi)
+        })
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function() {
             localStorage.setItem("order", this.responseText)
+            console.log(localStorage.getItem('order'))
             alert("formulaire envoyé")
-            window.location = "confirmation.html";
-        }else {
-        }
+            window.location = "confirmation.html"
+        })
+        // if (responseEnvoiFetch.ok) {
+        //     
+        // }
     }
-
+    envoiFetch();
     
 })
+    // var xhr = new XMLHttpRequest();
+//     xhr.open("POST", "http://localhost:3000/api/cameras/order");
+//     xhr.setRequestHeader("Content-type", "application/json")
+//     xhr.send(JSON.stringify(envoi));
+//     xhr.onreadystatechange = function() {
+//         if (this.readyState == 4 && this.status == 201) {
+//             localStorage.setItem("order", this.responseText)
+//             alert("formulaire envoyé")
+//             window.location = "confirmation.html";
+//         }else {
+//         }
+//     }
