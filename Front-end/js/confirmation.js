@@ -6,7 +6,7 @@ function recupLocalStorage () {
     if(panier != null){
         var numeroCommande = document.createElement('span');
         numeroCommande.setAttribute('class', 'numero_commande');
-        numeroCommande.innerHTML = JSON.parse(order).orderId;
+        numeroCommande.innerHTML = order;
         confirmation.append(numeroCommande);
         var prixTotal = document.createElement('span');
         prixTotal.setAttribute('class', 'prix_total');

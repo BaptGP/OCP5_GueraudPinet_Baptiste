@@ -109,28 +109,12 @@ document.getElementById('formulaire').addEventListener("submit", function(e){
         .then(function(res) {
             return res.json();
         })
-        .then(function() {
-            localStorage.setItem("order", this.responseText)
-            console.log(localStorage.getItem('order'))
+        .then(function(res) {
+            localStorage.setItem("order", res.orderId)
             alert("formulaire envoyé")
             window.location = "confirmation.html"
         })
-        // if (responseEnvoiFetch.ok) {
-        //     
-        // }
     }
     envoiFetch();
     
 })
-    // var xhr = new XMLHttpRequest();
-//     xhr.open("POST", "http://localhost:3000/api/cameras/order");
-//     xhr.setRequestHeader("Content-type", "application/json")
-//     xhr.send(JSON.stringify(envoi));
-//     xhr.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 201) {
-//             localStorage.setItem("order", this.responseText)
-//             alert("formulaire envoyé")
-//             window.location = "confirmation.html";
-//         }else {
-//         }
-//     }
